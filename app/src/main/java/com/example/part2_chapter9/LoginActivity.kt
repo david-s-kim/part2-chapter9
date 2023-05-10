@@ -12,7 +12,6 @@ import com.kakao.sdk.user.UserApiClient
 
 class LoginActivity: AppCompatActivity() {
 
-
     private lateinit var binding:ActivityLoginBinding
     private val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
         if(error != null) {
@@ -32,7 +31,7 @@ class LoginActivity: AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        KakaoSdk.init(this, "cb09fe46431a8492a2cd22a1276b140b")
+        KakaoSdk.init(this, "")
 
         binding.kakaoTalkLoginButton.setOnClickListener {
 
