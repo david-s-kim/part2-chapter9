@@ -56,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        //복습
         emailLoginResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
           if( it.resultCode == RESULT_OK) {
               val email = it.data?.getStringExtra("email")
@@ -69,7 +68,6 @@ class LoginActivity : AppCompatActivity() {
               }
           }
         }
-        //
 
         binding.kakaoTalkLoginButton.setOnClickListener {
 
@@ -100,7 +98,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-    // 복습
+
     private fun showErrorToast() {
         Toast.makeText(this, "사용자 로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
     }
@@ -164,7 +162,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateFirebaseDatabase(user: User){
+    private fun updateFirebaseDatabase(user:User) {
         val uid = Firebase.auth.currentUser?.uid.orEmpty()
 
         val personMap = mutableMapOf<String, Any>()
@@ -175,12 +173,10 @@ class LoginActivity : AppCompatActivity() {
         Firebase.database.reference.child("Person").child(uid).updateChildren(personMap)
 
         navigateToMapActivity()
-
     }
 
     private fun navigateToMapActivity() {
         startActivity(Intent(this, MapActivity::class.java))
     }
 
-//
 }

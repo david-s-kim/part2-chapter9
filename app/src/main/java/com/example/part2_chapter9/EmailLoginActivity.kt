@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.part2_chapter9.databinding.ActivityEmailLoginBinding
 
-//복습
 class EmailLoginActivity: AppCompatActivity() {
 
     private lateinit var binding:ActivityEmailLoginBinding
@@ -31,4 +30,3 @@ class EmailLoginActivity: AppCompatActivity() {
         }
     }
 }
-//
